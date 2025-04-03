@@ -117,7 +117,7 @@ docker ps | grep openvas
 - **URL**: https://localhost:8080
 - **Initial Credentials**: 
   - Username: admin
-  - Password: Your chosen complex password
+  - Password: admin  the password 
 
 ### First-Time Setup Recommendations
 1. Change default password immediately
