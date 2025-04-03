@@ -22,10 +22,10 @@ Our primary goals were to:
 
 ## 👥 Project Team
 
-- **Alex Garcia Chiquito**: Project Planning & Client Communication
-- **Dmitriy Galasli**: OpenVAS Configuration
-- **Jakhongir Alikulov**: Test Environment Setup
-- **Asadbek Muzaffarov**: Wazuh SIEM Implementation
+- **Alex Garcia Chiquito**: Wazuh SIEM Implementation
+- **Dmitriy Galasli**: Metasploitable2 Installation
+- **Jakhongir Alikulov**: Wazuh Agent Installation & Integration
+- **Asadbek Muzaffarov**: OpenVAS Configuration
 
 ## 🔍 Technical Architecture
 
@@ -54,7 +54,6 @@ git clone https://github.com/garciaca1/Security-Assesment/Wazuh.git
 git clone https://github.com/garciaca1/Security-Assesment/OpenVAS.git
 git clone https://github.com/garciaca1/Security-Assesment/Metasploitable2.git
 
-# Refer to individual repository READMEs for specific installation instructions
 ```
 
 ## 🚧 Key Challenges Overcome
