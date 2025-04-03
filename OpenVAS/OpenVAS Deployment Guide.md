@@ -97,7 +97,13 @@ networks:
     driver: bridge
     ipam:
       config:
-        - subnet: 172.20.0.0/16
+        - subnet: 172.16.252/16
+     #The choice of 172.20.0.0/16 represents a balanced approach:
+
+     #Provides ample IP space
+     #Minimizes conflict potential
+     #Offers clear network separation
+     #Aligns with best practices in containerized security environments
 ```
 
 ## 🎯 Optimization and Performance Tuning
