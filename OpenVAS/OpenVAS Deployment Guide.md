@@ -72,7 +72,7 @@ services:
     environment:
       # Customized for gaming infrastructure security
       - USERNAME=admin
-      - PASSWORD=complex_secure_password
+      - PASSWORD=admin #Generally put complex secure password
       - ALLOW_PLAIN_PASSWORDS=false
       - AUTO_UPDATE=true
     volumes:
