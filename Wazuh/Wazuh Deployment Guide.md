@@ -49,7 +49,8 @@ chmod +x wazuh-install.sh
 
 Run the all-in-one installation:
 ```bash
-sudo ./wazuh-install.sh -a
+sudo ./wazuh-install.sh -a -i
+#-i stands for ignore, and it is necessary to use to complete installation 
 ```
 
 This process will take approximately 10-15 minutes depending on your system resources.
