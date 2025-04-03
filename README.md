@@ -108,3 +108,33 @@ This project is licensed under the MIT License. See individual repositories for 
 ---
 
 **Disclaimer**: This project is for educational and research purposes. Always ensure proper authorization before conducting security assessments.
+
+
+
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#4169E1', 'primaryTextColor': '#FFFFFF', 'lineColor': '#008B8B'}}}%%
+flowchart TB
+    subgraph "Game Infrastructure Security Ecosystem"
+        A[Game Servers] -->|Monitored by| B[Wazuh Agents]
+        B -->|Sends Events to| C[Wazuh Manager]
+        
+        D[OpenVAS Vulnerability Scanner] -->|Scans and Reports| C
+        
+        E[Metasploitable2 Test Environment] -->|Simulates Vulnerabilities| D
+        
+        C -->|Generates Alerts| F[Security Dashboard]
+        
+        G[Threat Intelligence Feed] -->|Provides Updates| D
+        
+        H[Incident Response System] <-->|Automated Mitigation| C
+    end
+    
+    subgraph "Monitoring & Response"
+        F -->|Alerts| I[Security Operations Team]
+        I -->|Investigates| J[Remediation Workflow]
+    end
+    
+    classDef primary fill:#4169E1,color:#FFFFFF;
+    classDef secondary fill:#008B8B,color:#FFFFFF;
+    
+    class A,B,E primary;
+    class C,D,F,G secondary;
