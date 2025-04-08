@@ -280,3 +280,5 @@ docker exec metasploitable2 service mysql start
 - [Metasploitable2 Documentation](https://docs.rapid7.com/metasploit/metasploitable-2/)
 - [Docker Security Best Practices](https://docs.docker.com/engine/security/)
 - [Wazuh Agent Installation Guide](https://documentation.wazuh.com/current/installation-guide/wazuh-agent/index.html)
+
+- https://www.dropbox.com/scl/fi/xem4jpwsyczaxez7j5nke/Setting-Up-Metasploitable-with-Docker.mp4?rlkey=lfe8chfp452fg0pqohaaf60cu&st=6c6db3i8&dl=0
