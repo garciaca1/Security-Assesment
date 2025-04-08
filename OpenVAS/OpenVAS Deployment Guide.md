@@ -1,5 +1,11 @@
 # OpenVAS Deployment Guide: Comprehensive Vulnerability Management
 
+<div align="center">
+  <img src="https://img.shields.io/badge/Security-OpenVAS-brightgreen" alt="OpenVAS">
+  <img src="https://img.shields.io/badge/Platform-Docker-blue" alt="Docker">
+  <img src="https://img.shields.io/badge/Level-Comprehensive-orange" alt="Comprehensive">
+</div>
+
 ## 🌐 Understanding OpenVAS: Your Network's Digital Guardian
 
 Imagine your network as a complex fortress. OpenVAS is like a master scout, meticulously examining every wall, gate, and hidden passage for potential weaknesses. This guide will transform you from a curious learner to a skilled vulnerability management practitioner.
@@ -57,8 +63,9 @@ docker-compose --version
 
 We'll craft a carefully designed Docker configuration optimized for security and performance:
 
-```yaml
-# ~/openvas-docker/docker-compose.yml
+```bash
+# Create directory for OpenVAS
+mkdir -p ~/openvas
 cd ~/openvas
 
 # Create docker-compose.yml for mikesplain/openvas
@@ -88,24 +95,22 @@ EOL
 docker-compose up -d
 ```
 
-### Step 4: Launch OpenVAS Container
+### Step 4: Launch and Verify OpenVAS Container
 
 ```bash
-# Navigate to docker configuration directory
-cd ~/openvas-docker
-
-
-
-# Start the container
-docker start openvas #container name
-
-#Wait 5 to 10 minutes
-
-# Verify container is running
+# Check if the container is running
 docker ps | grep openvas
-```
-### Step 4 Removing Existing OpenVAS Docker Installation for Reinstallation ONLY
 
+# Note: OpenVAS initialization can take 5-10 minutes
+# You can monitor the logs while waiting
+docker logs -f openvas
+```
+
+### Step 5: Reinstallation (If Needed)
+
+If you need to completely reinstall OpenVAS, follow these steps:
+
+```bash
 # Stop all running OpenVAS containers
 docker stop $(docker ps -a | grep openvas | awk '{print $1}')
 
@@ -121,18 +126,25 @@ docker volume rm $(docker volume ls | grep openvas | awk '{print $2}')
 # Clean up any dangling Docker resources
 docker system prune -f
 
+# Then follow steps 3-4 again to reinstall
+```
+
 ## 🔍 Initial Configuration
 
 ### Accessing Web Interface
-- **URL**: https://localhost:8080
+- **URL**: https://localhost:443
 - **Initial Credentials**: 
-  - Username: admin
-  - Password: admin  the password 
+  - Username: `admin`
+  - Password: `admin`
 
 ### First-Time Setup Recommendations
 1. Change default password immediately
 2. Configure two-factor authentication
 3. Set up email notifications for critical vulnerabilities
+
+<div align="center">
+  <img src="https://img.shields.io/badge/⚠️-Change_Default_Password-red" alt="Warning">
+</div>
 
 ## 🎮 Gaming Infrastructure Optimization
 
@@ -210,10 +222,10 @@ docker-compose up -d
 
 ## 💡 Pro Tips for Vulnerability Management
 
-1. Schedule regular but non-disruptive scans
-2. Prioritize critical infrastructure
-3. Correlate scan results with threat intelligence
-4. Develop a rapid remediation process
+1. **Schedule Regular Scans**: Consistent but non-disruptive scanning schedules
+2. **Prioritize Critical Infrastructure**: Focus on high-value assets first
+3. **Correlate Results**: Connect scan results with threat intelligence
+4. **Rapid Remediation**: Develop streamlined patching processes
 
 ## 🔮 Future Considerations
 
@@ -230,10 +242,19 @@ Vulnerability management is an evolving landscape:
 ## 🤝 Community and Support
 - [Greenbone Community Documentation](https://greenbone.github.io/docs/)
 - [OpenVAS Docker Repository](https://github.com/Secure-Compliance-Solutions-LLC/GVM-Docker)
+- [OpenVAS Forum](https://community.greenbone.net/)
 
 ---
 
-**Philosophical Insight**: Security is not a destination, but a continuous journey of learning, adaptation, and vigilance.
+<div align="center">
+  <b>Philosophical Insight</b>: Security is not a destination, but a continuous journey of learning, adaptation, and vigilance.
+</div>
 
 ## 📝 Disclaimer
 This guide provides a foundational approach. Always adapt to your specific organizational needs and consult security professionals for comprehensive strategies.
+
+---
+
+<div align="center">
+  <i>Created with ❤️ for the security community</i>
+</div>
