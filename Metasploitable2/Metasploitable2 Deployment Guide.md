@@ -38,7 +38,7 @@ docker run --name metasploitable2 \
   --ip 192.168.170.2 \
   -p 80:80 -p 21:21 -p 22:22 -p 23:23 -p 25:25 -p 445:445 -p 3306:3306 \
   -p 5432:5432 -p 8180:8180 -p 6667:6667 \
-  -d tleemcjr/metasploitable2
+  -d rapid7/metasploitable2
 ```
 
 This command:
