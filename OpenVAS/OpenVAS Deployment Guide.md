@@ -94,17 +94,32 @@ docker-compose up -d
 # Navigate to docker configuration directory
 cd ~/openvas-docker
 
-# Pull latest image
-docker-compose pull
+
 
 # Start the container
-docker-compose up -d
+docker start #container name
 
-#Wait 15 to 30 minutes
+#Wait 5 to 10 minutes
 
 # Verify container is running
 docker ps | grep openvas
 ```
+### Step 4 Removing Existing OpenVAS Docker Installation for Reinstallation ONLY
+
+# Stop all running OpenVAS containers
+docker stop $(docker ps -a | grep openvas | awk '{print $1}')
+
+# Remove the containers
+docker rm $(docker ps -a | grep openvas | awk '{print $1}')
+
+# Remove OpenVAS images
+docker rmi $(docker images | grep openvas | awk '{print $3}')
+
+# Remove any OpenVAS volumes (optional - only if you want a completely fresh start)
+docker volume rm $(docker volume ls | grep openvas | awk '{print $2}')
+
+# Clean up any dangling Docker resources
+docker system prune -f
 
 ## 🔍 Initial Configuration
 
