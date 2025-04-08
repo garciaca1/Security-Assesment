@@ -132,7 +132,7 @@ docker system prune -f
 ## 🔍 Initial Configuration
 
 ### Accessing Web Interface
-- **URL**: https://localhost:443
+- **URL**: http://localhost
 - **Initial Credentials**: 
   - Username: `admin`
   - Password: `admin`
