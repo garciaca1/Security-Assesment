@@ -59,40 +59,33 @@ We'll craft a carefully designed Docker configuration optimized for security and
 
 ```yaml
 # ~/openvas-docker/docker-compose.yml
+cd ~/openvas
+
+# Create docker-compose.yml for mikesplain/openvas
+cat > docker-compose.yml << 'EOL'
 version: '3'
 
 services:
   openvas:
-    image: securecompliance/gvm:latest
-    container_name: game_infrastructure_scanner
+    image: mikesplain/openvas:9
+    container_name: openvas
     restart: unless-stopped
     ports:
-      - "8080:9392"  # Web interface
-      - "5432:5432"  # Database access
-    environment:
-      # Customized for gaming infrastructure security
-      - USERNAME=admin
-      - PASSWORD=admin #Generally put complex secure password
-      - ALLOW_PLAIN_PASSWORDS=false
-      - AUTO_UPDATE=true
+      - "443:443"
+      - "9390:9390"
+      - "9392:9392"
     volumes:
-      - openvas_data:/var/lib/openvas
-      - openvas_logs:/var/log/gvm
-    networks:
-      - security_scan_network
+      - openvas_data:/var/lib/openvas/mgr
+    environment:
+      - OV_PASSWORD=admin
+      - INSTALL_PVA=true
 
-networks:
-  security_scan_network:
-    driver: bridge
-    ipam:
-      config:
-        - subnet: 172.20.0.0/16
-#The choice of 172.20.0.0/16 represents a balanced approach:
+volumes:
+  openvas_data:
+EOL
 
-#Provides ample IP space
-#Minimizes conflict potential
-#Offers clear network separation
-#Aligns with best practices in containerized security environments
+# Start the container
+docker-compose up -d
 ```
 
 ### Step 4: Launch OpenVAS Container
