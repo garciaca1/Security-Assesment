@@ -97,7 +97,7 @@ cd ~/openvas-docker
 
 
 # Start the container
-docker start #container name
+docker start openvas #container name
 
 #Wait 5 to 10 minutes
 
