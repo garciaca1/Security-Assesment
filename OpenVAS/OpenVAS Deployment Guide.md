@@ -219,6 +219,9 @@ docker-compose up -d
    # Test port accessibility
    telnet CONTAINER_IP 9392
    ```
+   Here is Link for Installation Guide Video
+
+   https://www.loom.com/share/4a82aff2955642eda18f631e5cf3f44c?sid=b7f364a7-b7d3-42e1-8cc1-0c0af6c017c1
 
 ## 💡 Pro Tips for Vulnerability Management
 
