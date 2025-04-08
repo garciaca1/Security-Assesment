@@ -28,7 +28,7 @@ Unlike official Docker images, Metasploitable2 isn't available in the official D
 
 1. Pull the Metasploitable2 image:
 ```bash
-docker pull tleemcjr/metasploitable2
+docker pull rapid7/metasploitable2
 ```
 
 2. Start the container with exposed vulnerable services:
