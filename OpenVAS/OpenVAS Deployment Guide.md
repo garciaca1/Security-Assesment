@@ -107,6 +107,8 @@ docker-compose pull
 # Start the container
 docker-compose up -d
 
+#Wait 15 to 30 minutes
+
 # Verify container is running
 docker ps | grep openvas
 ```
