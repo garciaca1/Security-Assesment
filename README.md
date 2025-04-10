@@ -111,9 +111,10 @@ This project is licensed under the MIT License. See individual repositories for 
 This section features walkthrough videos created by each team member, showcasing the implementation of their respective components in the project.
 
 ### ✅ Alex Garcia Chiquito — Wazuh SIEM Implementation
-> [![Watch Video](https://img.youtube.com/vi/YOUR_VIDEO_ID_HERE/0.jpg)](https://github.com/garciaca1/Security-Assesment/assets/videos/alex-wazuh.mp4)
->  
-> _Demonstrates the full installation and configuration of the Wazuh SIEM system, including troubleshooting, dashboard access, and system requirements._
+
+[![Watch Video](https://img.youtube.com/vi/MaapHkGPAM0/0.jpg)](https://www.youtube.com/watch?v=MaapHkGPAM0)
+
+_Demonstrates the full installation and configuration of the Wazuh SIEM system, including troubleshooting, dashboard access, and deployment steps._
 
 ### 🕒 Coming Soon
 - **Asadbek Muzaffarov** — OpenVAS Configuration
